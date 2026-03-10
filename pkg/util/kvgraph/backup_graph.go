@@ -116,5 +116,6 @@ func NewDataVolumeBackupGraph(dv *cdiv1.DataVolume) []velero.ResourceIdentifier 
 	if dv.Status.Phase == cdiv1.Succeeded {
 		resources = addVeleroResource(dv.Name, dv.Namespace, "persistentvolumeclaims", resources)
 	}
+	resources = addVeleroResource(dv.Name, dv.Namespace, "helmreleases", resources)
 	return resources
 }

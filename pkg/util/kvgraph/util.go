@@ -43,6 +43,7 @@ var KVObjectGraph = map[string]schema.GroupResource{
 	"serviceaccounts":         kuberesource.ServiceAccounts,
 	"secrets":                 kuberesource.Secrets,
 	"pods":                    kuberesource.Pods,
+	"helmreleases":            {Group: "helm.toolkit.fluxcd.io", Resource: "helmreleases"},
 }
 
 func addVeleroResource(name, namespace, resource string, resources []velero.ResourceIdentifier) []velero.ResourceIdentifier {
